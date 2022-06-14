@@ -1,0 +1,48 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<context:annotation-config></context:annotation-config>
+<context:component-scan base-package="com.zensar.beans"></context:component-scan>
+<context:property-placeholder location="data.properties"/>
+<bean id ="student" class= "com.zensar.Student" >
+<property name="StudentId" value = "${id}"></property>
+<property name="StudentName" value="${name}"></property>
+<property name="StudentAge" value="${age}"></property>
+</bean>
+
+
+</beans>
+<!--
+<bean id="product" class = "com.zensar.Product">
+
+
+
+<property name="productId" value="1"></property>
+<property name="productName" value ="Laptop"></property>
+<property name="productCost" value = "45000"></property>
+</bean >
+-->
+<!--
+<bean id ="pro2" class = "com.zensar.Product">
+<constructor-arg index="2">
+<value type="int">200000</value >
+</constructor-arg>
+<constructor-arg index = "1">
+<value>Car</value>
+</constructor-arg>
+<constructor-arg index="0">
+<value type="int">5</value>
+</constructor-arg>
+</bean>
+-->
+
+
+
+<!--ByType-->
+
+
+
+
+<!--
