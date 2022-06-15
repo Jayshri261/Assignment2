@@ -1,22 +1,15 @@
-package com.zensar.entity;
+package com.zensar.dto;
 
-import java.util.Date;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
-public class Coupon {
-	@Id
+public class CouponDto {
 	private int couponId;
 	private String couponCode;
 	private String expDate;
 
-	public Coupon() {
+	public CouponDto() {
 		super();
 	}
 
-	public Coupon(int couponId, String couponCode, String expDate) {
+	public CouponDto(int couponId, String couponCode, String expDate) {
 		super();
 		this.couponId = couponId;
 		this.couponCode = couponCode;
@@ -39,17 +32,17 @@ public class Coupon {
 		this.couponCode = couponCode;
 	}
 
-	public String getexpDate() {
+	public String getExpDate() {
 		return expDate;
 	}
 
-	public void setexpDate(String expDate) {
+	public void setExpDate(String expDate) {
 		this.expDate = expDate;
 	}
 
 	@Override
 	public String toString() {
-		return "Coupon [couponId=" + couponId + ", couponCode=" + couponCode + ", expDate=" + expDate + "]";
+		return "CouponDto [couponId=" + couponId + ", couponCode=" + couponCode + ", expDate=" + expDate + "]";
 	}
 
 }
