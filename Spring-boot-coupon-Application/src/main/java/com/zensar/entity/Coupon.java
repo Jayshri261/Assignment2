@@ -7,39 +7,48 @@ import javax.persistence.Id;
 public class Coupon {
 	@Id
 	private int couponId;
-	private String couponName;
-	private int price;
+	private int couponCode;
+	private String expiry_date;
+
 	public Coupon() {
 		super();
+
 	}
-	public Coupon(int couponId, String couponName, int price) {
+
+	public Coupon(int couponId, int couponCode, String expiry_date) {
 		super();
 		this.couponId = couponId;
-		this.couponName = couponName;
-		this.price = price;
+		this.couponCode = couponCode;
+		this.expiry_date = expiry_date;
 	}
+
 	public int getCouponId() {
 		return couponId;
 	}
+
 	public void setCouponId(int couponId) {
 		this.couponId = couponId;
 	}
-	public String getCouponName() {
-		return couponName;
+
+	public int getCouponCode() {
+		return couponCode;
 	}
-	public void setCouponName(String couponName) {
-		this.couponName = couponName;
+
+	public void setCouponCode(int couponCode) {
+		this.couponCode = couponCode;
 	}
-	public int getPrice() {
-		return price;
+
+	public String getExpiry_date() {
+		return expiry_date;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+
+	public void setExpiry_date(String expiry_date) {
+		this.expiry_date = expiry_date;
 	}
+
 	@Override
 	public String toString() {
-		return "Coupon [couponId=" + couponId + ", couponName=" + couponName + ", price=" + price + "]";
+		return "Coupon [couponId=" + couponId + ", couponCode=" + couponCode + ", expiry_date=" + expiry_date + "]";
 	}
-	
 
 }
