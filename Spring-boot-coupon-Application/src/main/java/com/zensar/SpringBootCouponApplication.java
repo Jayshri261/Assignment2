@@ -11,9 +11,9 @@ import org.springframework.context.annotation.ComponentScan;
 public class SpringBootCouponApplication {
 
 	public static void main(String[] args) {
-		System.out.println("Jayshri");
+		System.out.println("Hii Jayshri");
 		SpringApplication.run(SpringBootCouponApplication.class, args);
-		System.out.println("Gaikwad");
+		System.out.println("Application Started");
 	}
 	@Bean
 	public ModelMapper getModelMapper(){

@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.zensar.Repository.CouponRepository;
@@ -35,10 +37,12 @@ public class CouponServiceImpl implements CouponService {
 	}
 
 	@Override
-	public List<CouponDto> getAllCoupon() {
-		List<Coupon> listOfCoupons = couponrepository.findAll();
+	public List<CouponDto> getAllCoupon(int pageNumber,int pageSize) {
+		//List<Coupon> listOfCoupons = couponrepository.findAll();
 		List<CouponDto> listOfDto = new ArrayList<CouponDto>();
-		for (Coupon coupon : listOfCoupons) {
+		Page<Coupon> findAll=couponrepository.findAll(PageRequest.of(pageNumber,pageSize));
+		List<Coupon> content=findAll.getContent();
+		for (Coupon coupon : content) {
 			//listOfDto.add(mapToDto(coupon));
 			listOfDto.add(modelMapper.map(coupon, CouponDto.class));
 		}
@@ -98,4 +102,49 @@ public class CouponServiceImpl implements CouponService {
 	 * coupon.setCouponCode(couponDto.getCouponCode());
 	 * coupon.setexpDate(couponDto.getExpDate()); return coupon; }
 	 */
+
+	@Override
+	public List<CouponDto> getByCouponCode(String couponCode) {
+		//return couponrepository.getByCouponCode(couponCode);
+		List<CouponDto> couponDtos=new ArrayList<>();
+		List<Coupon> coupons=couponrepository.com(couponCode);
+		for(Coupon coupon:coupons)
+			couponDtos.add(modelMapper.map(coupon, CouponDto.class));
+		return couponDtos;
+	}
+
+	
+	@Override
+	public List<CouponDto> findByCouponCodeAndCouponId( String couponCode,int couponId) {
+		
+		List<CouponDto> couponDtos=new ArrayList<>();
+		List<Coupon> coupons=couponrepository.com3(couponCode,couponId);
+		for(Coupon coupon:coupons)
+			couponDtos.add(modelMapper.map(coupon, CouponDto.class));
+		return couponDtos;
+		
+		//return couponrepository.findByCouponCodeAndCouponId(couponCode, couponId);
+	}
+
+	@Override
+	public List<Coupon> com(String couponCode) {
+		return couponrepository.com(couponCode);
+	}
+
+	@Override
+	public List<Coupon> com1(String couponCode, int couponId) {
+		return couponrepository.com1(couponCode, couponId);
+	}
+
+	@Override
+	public List<Coupon> com2(String couponCode, int couponId) {
+		return couponrepository.com2(couponCode, couponId);
+	}
+
+	@Override
+	public List<Coupon> com3(String couponCode, int couponId) {
+		return couponrepository.com3(couponCode, couponId);
+	}
+
+	
 }
