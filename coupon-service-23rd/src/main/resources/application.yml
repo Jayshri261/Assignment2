@@ -1,0 +1,22 @@
+server:
+   port: 4444
+spring:
+   datasource:
+      password: root
+      url: jdbc:mysql://localhost:3306/Mydb
+      username: root
+   jpa:
+      hibernate:
+         ddl-auto: update
+      show-sql: true
+      properties:
+         hibernate:
+            format_sql: true
+      
+
+    
+
+  
+
+    
+ 
