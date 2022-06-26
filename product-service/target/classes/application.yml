@@ -1,0 +1,20 @@
+server:
+  port: 4321
+spring:
+  datasource:
+    password: root
+    url: jdbc:mysql://localhost:3306/Mydb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  application:
+    name: product-service
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
