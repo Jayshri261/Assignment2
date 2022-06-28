@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 @Entity
 @Data
 @NoArgsConstructor
@@ -18,5 +17,5 @@ public class Coupon {
 	private String couponCode;
 	private Double discount;
 	private String expDate;
-
+	
 }

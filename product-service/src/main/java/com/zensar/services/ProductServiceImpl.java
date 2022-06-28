@@ -8,9 +8,10 @@ import com.zensar.repository.ProductRepository;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-
+	
 	@Autowired
 	private ProductRepository productRepository;
+	
 
 	@Override
 	public Product insertProduct(Product product) {
