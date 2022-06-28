@@ -9,8 +9,8 @@ public interface CouponService {
 	public Coupon createCoupon(Coupon coupon);
 
 	public Coupon getCoupon(String couponCode);
-
+	
 	public List<Coupon> getAllCoupons();
 
-	public void deleteCoupon(String couponCode);
+	public void  deleteCoupon(String couponCode);
 }

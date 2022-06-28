@@ -18,5 +18,5 @@ public class Coupon {
 	private String couponCode;
 	private Double discount;
 	private String expDate;
-
+	
 }
