@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RefreshScope
 public class CouponServiceApplication {
-	@Value("${test.mylanguage}")
+	@Value("${test.myLanguage}")
 	private String language;
 
 	@Autowired
@@ -26,7 +26,7 @@ public class CouponServiceApplication {
 
 	@GetMapping("/")
 	public String testConfig() {
-		return "Your language is " + language + "\nYour training is " + config.getTraining();
+		return "Your language is " + language + "\nYour property is " + config.getTestProperty();
 	}
 
 }

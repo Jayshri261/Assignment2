@@ -8,15 +8,18 @@ import org.springframework.stereotype.Component;
 @RefreshScope
 public class MyConfig {
 
-	@Value("${test.mytraining}")
-	private String training;
+	@Value("${test.testProperty}")
+    private String testProperty;
 
-	public String getTraining() {
-		return training;
-	}
+    public String getTestProperty() {
+        return testProperty;
+    }
 
-	public void setTraining(String training) {
-		this.training = training;
-	}
+    public void setTestProperty(String testProperty) {
+        this.testProperty = testProperty;
+    }
+
 
 }
+
+

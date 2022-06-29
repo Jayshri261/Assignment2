@@ -1,3 +1,4 @@
+
 server:
   port: 1235
 spring:
@@ -26,7 +27,7 @@ eureka:
       
   instance:
     prefer-ip-address: true
-    
+    hostname:  localhost
  
 management:
   endpoints:
@@ -34,4 +35,7 @@ management:
       exposure:
         include:
         - "*" 
+  
+
     
+ 
