@@ -46,7 +46,7 @@ public class ProductController {
 		//Coupon couponObject = coupon.getBody();
 		Coupon coupon = restClient.getCoupon(product.getCouponCode());
 		product.setPrice(product.getPrice() - coupon.getDiscount());
-
+        //restClient.getCoupon(product.)
 		return productService.insertProduct(product);
 
 	}

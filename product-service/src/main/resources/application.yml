@@ -1,4 +1,4 @@
-sserver:
+server:
   port: 4321
 
 spring:
@@ -35,3 +35,6 @@ resilience4j:
       productapi:
        max-attempts: 3
        wait-duration: 20s 
+      
+      
+    
